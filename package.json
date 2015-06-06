@@ -1,0 +1,25 @@
+{
+  "name": "angular-crop",
+  "version": "1.0.1",
+  "description": "Quick and easy Angular cropper that supports Load-On-Demand in large SPA applications",
+  "main": "lib/angular-crop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blekr/angular-crop.git"
+  },
+  "keywords": [
+    "angular",
+    "cropper",
+    "SPA",
+    "Load-On-Demand"
+  ],
+  "author": "wenchengsheng <407375207@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blekr/angular-crop/issues"
+  },
+  "homepage": "https://github.com/blekr/angular-crop"
+}
