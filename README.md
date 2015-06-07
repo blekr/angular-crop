@@ -40,10 +40,10 @@ app.controller('controllerName', function () {
 	};
 	$scope.events = {
 		onChange: function () {
-			console.log('changed');
+			console.log('changed', $scope.data);
 		},
 		onSelect: function () {
-			console.log('selected');
+			console.log('selected', $scope.data);
 		}
 	};
 });
@@ -68,10 +68,10 @@ define(['app', 'angular-crop'], function (app, angularCrop) {
 		};
 		$scope.events = {
 			onChange: function () {
-				console.log('changed');
+				console.log('changed', $scope.data);
 			},
 			onSelect: function () {
-				console.log('selected');
+				console.log('selected', $scope.data);
 			}
 		};
 	});
@@ -97,10 +97,10 @@ define(['app', 'angular-crop'], function (app, angularCrop) {
 		};
 		$scope.events = {
 			onChange: function () {
-				console.log('changed');
+				console.log('changed', $scope.data);
 			},
 			onSelect: function () {
-				console.log('selected');
+				console.log('selected', $scope.data);
 			}
 		};
 		angularCrop.angularCrop($('#imgID'), $scope.data, $scope.events);
