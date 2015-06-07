@@ -5,7 +5,6 @@ Good practice to build large scale SPA applications: <br>
 [http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs](http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs)
 [http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single](http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single) <br>
 
-client-side cropping will be added in the future.
 
 # Install
 ```console
@@ -16,17 +15,19 @@ npm install angular-crop
 Jcrop
 
 # Usage
-angular-crop is an object containing a directive method and a service method with which you can feed angular.directive() and 
+angular-crop is an object containing a directive method and a service method that you can feed it to angular.directive() and 
 angular.service() directly. 
 directive: js function, you can feed it to angular.directive() as second parameter;<br>
 service: js function, you can feed it to angular.service() as second parameter; <br>
-For example:
+## traditional browser global namespace 
+include files:
 ```html
 <link rel="stylesheet" href="css/jquery.Jcrop.css">
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script type="text/javascript" src="js/jquery.Jcrop.min.js"></script>
 <script type="text/javascript" src="js/angular-crop.js"></script>
 ```
+controller: 
 ```js
 var app = angular.module('app', []);
 app.directive('angularCrop', angularCrop.directive);
@@ -47,4 +48,70 @@ app.controller('controllerName', function () {
 	};
 });
 ```
+view:
+```html
+<img src="" angular-crop angular-crop-data="data" angular-crop-events="events" />
+```
+
+## load angular-crop using requireJS
+controller:
+```js
+define(['app', 'angular-crop'], function (app, angularCrop) {
+	app.register.directive('angularCrop', angularCrop.directive);
+	app.register.controller('controllerName', function ($scope, $css) {
+		$css.bind({href: 'app/views/css/jquery.Jcrop.css'}, $scope);
+		$scope.data = {
+			x1: 0, 
+			y1: 0,
+			x2: 200,
+			y2: 200
+		};
+		$scope.events = {
+			onChange: function () {
+				console.log('changed');
+			},
+			onSelect: function () {
+				console.log('selected');
+			}
+		};
+	});
+});
+```
+view:
+```html
+<img src="" angular-crop angular-crop-data="data" angular-crop-events="events" />
+```
+
+or you can use service instead of directive.
+controller:
+```js
+define(['app', 'angular-crop'], function (app, angularCrop) {
+	app.register.service('angularCrop', angularCrop.service);
+	app.register.controller('controllerName', function ($scope, $css, angularCrop) {
+		$css.bind({href: 'app/views/css/jquery.Jcrop.css'}, $scope);
+		$scope.data = {
+			x1: 0, 
+			y1: 0,
+			x2: 200,
+			y2: 200
+		};
+		$scope.events = {
+			onChange: function () {
+				console.log('changed');
+			},
+			onSelect: function () {
+				console.log('selected');
+			}
+		};
+		angularCrop.angularCrop($('#imgID'), $scope.data, $scope.events);
+	});
+});
+```
+view:
+```html
+<img src="" id="imgID" />
+```
+
+
+
 
