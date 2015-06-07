@@ -1,6 +1,6 @@
 {
   "name": "angular-crop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Quick and easy Angular cropper that supports Load-On-Demand in large SPA applications",
   "main": "lib/angular-crop.js",
   "scripts": {
