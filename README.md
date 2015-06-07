@@ -1,5 +1,9 @@
 # angular-crop
-angular-crop is a [Jcrop](http://deepliquid.com/content/Jcrop.html) wrapper for [angular](https://angularjs.org/) framework. It offers a angular directive and a angular service that add image cropping functionality to your web application. The reason not to provide by angular module is that current angular module dependencies does not support load-on-demand, meaning that all module dependencies must be loaded before creating application module. load-on-demand feature is very significant in large SPA applications.
+angular-crop is a [Jcrop](http://deepliquid.com/content/Jcrop.html) wrapper for [angular](https://angularjs.org/) framework. It offers a angular directive and a angular service that add image cropping functionality to your web application. The reason not to provide by angular module is that current angular module dependencies does not support load-on-demand, meaning that all module dependencies must be loaded before creating application module. load-on-demand feature is very significant in large scale SPA applications.
+
+Good practice to build large scale SPA applications: <br>
+[http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs](http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs)
+[http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single](http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single) <br>
 
 client-side cropping will be added in the future.
 
@@ -12,8 +16,10 @@ npm install angular-crop
 Jcrop
 
 # Usage
-angular-crop returns an object containing a directive method and a service method, you can feed it directively to angular.directive() and 
-angular.service(). 
+angular-crop is an object containing a directive method and a service method with which you can feed angular.directive() and 
+angular.service() directly. 
+directive: js function, you can feed it to angular.directive() as second parameter;<br>
+service: js function, you can feed it to angular.service() as second parameter; <br>
 For example:
 ```html
 <link rel="stylesheet" href="css/jquery.Jcrop.css">
@@ -25,20 +31,20 @@ For example:
 var app = angular.module('app', []);
 app.directive('angularCrop', angularCrop.directive);
 app.controller('controllerName', function () {
-		$scope.data = {
-x1: 0,
-y1: 0,
-x2: 200,
-y2: 200
-};
-$scope.events = {
-onChange: function () {
-console.log('changed');
-},
-onSelect: function () {
-console.log('selected');
-}
-};
+	$scope.data = {
+		x1: 0,
+		y1: 0,
+		x2: 200,
+		y2: 200
+	};
+	$scope.events = {
+		onChange: function () {
+			console.log('changed');
+		},
+		onSelect: function () {
+			console.log('selected');
+		}
+	};
 });
 ```
 
