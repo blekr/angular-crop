@@ -5,6 +5,8 @@ Good practice to build large scale SPA applications: <br>
 [http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs](http://weblogs.asp.net/dwahlin/dynamically-loading-controllers-and-views-with-angularjs-and-requirejs)
 [http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single](http://www.codeproject.com/Articles/808213/Developing-a-Large-Scale-Application-with-a-Single) <br>
 
+# Screenshot
+![example](img/example.png)
 
 # Install
 ```console
