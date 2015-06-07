@@ -19,7 +19,7 @@ angular-crop is an object containing a directive method and a service method tha
 angular.service() directly. <br>
 directive: js function, you can feed it to angular.directive() as second parameter;<br>
 service: js function, you can feed it to angular.service() as second parameter; <br>
-## traditional browser global namespace 
+## traditional global namespace 
 include files:
 ```html
 <link rel="stylesheet" href="css/jquery.Jcrop.css">
@@ -82,7 +82,7 @@ view:
 <img src="" angular-crop angular-crop-data="data" angular-crop-events="events" />
 ```
 
-or you can use service instead of directive.
+or you can use service instead of directive. <br>
 controller:
 ```js
 define(['app', 'angular-crop'], function (app, angularCrop) {
@@ -111,6 +111,18 @@ view:
 ```html
 <img src="" id="imgID" />
 ```
+
+# API
+```html
+<img src="" angular-crop angular-crop-data="data" angular-crop-events="events">
+```
+data is an object containing:
+.... * x1, y1, x2, y2: Selection area, in pixels.
+.... * ratio: Aspect ratio of w/h (e.g. 1 for square)
+
+events is an object containing:
+.... * onChange: Called when the selection is moving
+.... * onSelect: Called when the selection is completed
 
 
 
