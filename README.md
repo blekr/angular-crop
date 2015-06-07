@@ -16,7 +16,7 @@ Jcrop
 
 # Usage
 angular-crop is an object containing a directive method and a service method that you can feed it to angular.directive() and 
-angular.service() directly. 
+angular.service() directly. <br>
 directive: js function, you can feed it to angular.directive() as second parameter;<br>
 service: js function, you can feed it to angular.service() as second parameter; <br>
 ## traditional browser global namespace 
