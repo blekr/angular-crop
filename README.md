@@ -117,12 +117,12 @@ view:
 <img src="" angular-crop angular-crop-data="data" angular-crop-events="events">
 ```
 data is an object containing:
-....* x1, y1, x2, y2: Selection area, in pixels.
-....* ratio: Aspect ratio of w/h (e.g. 1 for square)
+*x1, y1, x2, y2: Selection area, in pixels.
+*ratio: Aspect ratio of w/h (e.g. 1 for square)
 
 events is an object containing:
-....* onChange: Called when the selection is moving
-....* onSelect: Called when the selection is completed
+*onChange: Called when the selection is moving
+*onSelect: Called when the selection is completed
 
 
 
